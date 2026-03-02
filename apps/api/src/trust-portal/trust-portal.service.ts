@@ -94,7 +94,9 @@ export class TrustPortalService {
         | 'soc2type2_status'
         | 'pci_dss_status'
         | 'nen7510_status'
-        | 'iso9001_status';
+        | 'iso9001_status'
+        | 'pipeda_status'
+        | 'phipa_status';
       enabledField:
         | 'iso27001'
         | 'iso42001'
@@ -104,7 +106,9 @@ export class TrustPortalService {
         | 'soc2type2'
         | 'pci_dss'
         | 'nen7510'
-        | 'iso9001';
+        | 'iso9001'
+        | 'pipeda'
+        | 'phipa';
       slug: string;
     }
   > = {
@@ -152,6 +156,16 @@ export class TrustPortalService {
       statusField: 'iso9001_status',
       enabledField: 'iso9001',
       slug: 'iso_9001',
+    },
+    [TrustFramework.pipeda]: {
+      statusField: 'pipeda_status',
+      enabledField: 'pipeda',
+      slug: 'pipeda',
+    },
+    [TrustFramework.phipa]: {
+      statusField: 'phipa_status',
+      enabledField: 'phipa',
+      slug: 'phipa',
     },
   };
 
@@ -436,6 +450,7 @@ export class TrustPortalService {
         description: dto.description || null,
         s3Key,
         isActive: true,
+        ...(dto.category ? { category: dto.category } : {}),
       },
       select: {
         id: true,

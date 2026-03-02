@@ -368,5 +368,45 @@
     "content": [{"type": "heading", "attrs": {"level": 2, "textAlign": null}, "content": [{"text": "Purpose", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "To ensure {{COMPANY}}'s network is configured to prevent unauthorized access and protect Cardholder Data (CHD).", "type": "text"}, {"type": "hardBreak"}]}, {"type": "heading", "attrs": {"level": 2, "textAlign": null}, "content": [{"text": "Firewall & Network Controls", "type": "text", "marks": [{"type": "bold"}]}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Default Deny:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "All inbound and outbound traffic must be blocked (\"Deny All\") unless explicitly allowed by a documented business need.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "DMZ Implementation:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Web servers facing the internet must reside in a DMZ (Demilitarized Zone). They must never communicate directly with the database; they must use an intermediary application layer.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Prohibited Direct Access:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Direct public access to the Cardholder Data Environment (CDE) is strictly forbidden.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Review Frequency:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Firewall and Security Group rules must be reviewed every ", "type": "text"}, {"text": "6 months", "type": "text", "marks": [{"type": "bold"}]}, {"text": " to remove unused or unsafe rules.", "type": "text"}]}]}]}]}]}, {"type": "paragraph", "attrs": {"textAlign": null}}, {"type": "heading", "attrs": {"level": 2, "textAlign": null}, "content": [{"text": "System Configuration Standards", "type": "text", "marks": [{"type": "bold"}]}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Vendor Defaults:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "All vendor-supplied default passwords (e.g., \"admin/admin\") must be changed ", "type": "text"}, {"text": "before", "type": "text", "marks": [{"type": "italic"}]}, {"text": " any system is installed on the network.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "System Hardening:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "All servers must be configured according to industry-standard benchmarks (e.g., CIS Benchmarks). Unnecessary services, ports, and scripts must be disabled.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "One Function Per Server:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Servers in the CDE must have a primary function (e.g., Web Server OR Database, not both on the same machine) to isolate risk.", "type": "text"}]}]}]}]}]}, {"type": "paragraph", "attrs": {"textAlign": null}}, {"type": "heading", "attrs": {"level": 2, "textAlign": null}, "content": [{"text": "Remote Access", "type": "text", "marks": [{"type": "bold"}]}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Encrypted Management:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Non-console administrative access (SSH, RDP) must be encrypted using strong cryptography (SSHv2, TLS 1.2+). Telnet and standard HTTP management interfaces are forbidden.", "type": "text"}]}]}]}]}, {"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Remote Work:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Access from outside the corporate network requires Multi-Factor Authentication (MFA) and a secure VPN.", "type": "text"}]}]}]}]}]}, {"type": "paragraph", "attrs": {"textAlign": null}}, {"type": "heading", "attrs": {"level": 2, "textAlign": null}, "content": [{"text": "Documentation", "type": "text", "marks": [{"type": "bold"}]}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "Network Diagrams:", "type": "text", "marks": [{"type": "bold"}]}, {"text": " ", "type": "text"}]}, {"type": "bulletList", "content": [{"type": "listItem", "content": [{"type": "paragraph", "attrs": {"textAlign": null}, "content": [{"text": "A current network diagram showing all connections to/from the CDE must be maintained and updated upon any significant network change.", "type": "text"}]}]}]}]}]}, {"type": "paragraph", "attrs": {"textAlign": null}}],
     "createdAt": "2025-12-18 19:33:31.814",
     "updatedAt": "2025-12-18 19:35:31.566"
+  },
+  {
+    "id": "frk_pt_ca_privacy_policy",
+    "name": "Canadian Privacy Policy",
+    "description": "Comprehensive privacy policy addressing Canadian federal (PIPEDA) and provincial privacy legislation requirements for the collection, use, disclosure, and protection of personal information.",
+    "frequency": "yearly",
+    "department": "gov",
+    "content": [],
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_pt_ca_custodian_policy",
+    "name": "Health Information Custodian Policy",
+    "description": "Policy governing the obligations of health information custodians under provincial health privacy legislation, including PHIPA, PHIA, and PHIPAA, covering collection, use, disclosure, and safeguarding of personal health information.",
+    "frequency": "yearly",
+    "department": "gov",
+    "content": [],
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_pt_ca_breach_procedure",
+    "name": "Breach Notification Procedure (Canadian)",
+    "description": "Procedure for detecting, assessing, containing, and reporting breaches of personal information and personal health information under Canadian federal and provincial privacy legislation, including notification to Commissioners and affected individuals.",
+    "frequency": "yearly",
+    "department": "gov",
+    "content": [],
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_pt_ca_oipc_reporting",
+    "name": "OIPC Compliance & Reporting Policy",
+    "description": "Policy for maintaining compliance with Alberta's Office of the Information and Privacy Commissioner (OIPC) requirements, including procedures for responding to investigations, complying with orders, filing mandatory breach reports, and managing custodian documentation.",
+    "frequency": "yearly",
+    "department": "gov",
+    "content": [],
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
   }
 ]

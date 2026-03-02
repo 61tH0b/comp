@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsOptional, IsString } from 'class-validator';
+import { IsEnum, IsOptional, IsString } from 'class-validator';
+import { TrustDocumentCategory } from '@prisma/client';
 
 export class UploadTrustDocumentDto {
   @ApiProperty({
@@ -37,6 +38,16 @@ export class UploadTrustDocumentDto {
   @IsOptional()
   @IsString()
   description?: string;
+
+  @ApiPropertyOptional({
+    description:
+      'Document category: general, oipc_report, custodian_document, privacy_impact_assessment, threat_risk_assessment, penetration_test_report, compliance_certificate',
+    example: 'general',
+    enum: TrustDocumentCategory,
+  })
+  @IsOptional()
+  @IsEnum(TrustDocumentCategory)
+  category?: TrustDocumentCategory;
 }
 
 export class TrustDocumentResponseDto {

@@ -4,7 +4,7 @@
 
 This document outlines the comprehensive plan to migrate Autochart.ai's compliance management from **Vanta.com** to the **Comp AI** open-source compliance platform. Autochart.ai, a product of Aya Health Technologies, is an AI-powered clinical documentation tool that must maintain compliance with SOC 2 Type II, HIPAA, GDPR, PIPEDA, PHIPA, and multiple Canadian provincial privacy laws.
 
-The migration strategy uses the **Framework Editor** approach for Canadian privacy frameworks (minimizing code changes) while requiring targeted code modifications for Trust Portal framework support, data migration tooling, and healthcare-specific enhancements.
+The migration strategy adds all 9 Canadian privacy frameworks via Framework Editor seed data with PIPEDA and PHIPA also added as first-class Trust Portal frameworks. A new `TrustDocumentCategory` system supports Alberta OIPC reports and custodian documents. Deployment remains on **AWS** (no Azure migration required).
 
 ---
 

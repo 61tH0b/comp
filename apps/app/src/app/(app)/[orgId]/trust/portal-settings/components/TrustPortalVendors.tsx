@@ -15,10 +15,12 @@ import {
   HIPAA,
   PCIDSS,
   NEN7510,
+  PIPEDA,
+  PHIPA,
 } from './logos';
 
 interface ComplianceBadge {
-  type: 'soc2' | 'iso27001' | 'iso42001' | 'gdpr' | 'hipaa' | 'pci_dss' | 'nen7510' | 'iso9001';
+  type: 'soc2' | 'iso27001' | 'iso42001' | 'gdpr' | 'hipaa' | 'pci_dss' | 'nen7510' | 'iso9001' | 'pipeda' | 'phipa';
   verified: boolean;
 }
 
@@ -49,6 +51,8 @@ const BADGE_ICONS: Record<ComplianceBadge['type'], React.ComponentType<React.SVG
   pci_dss: PCIDSS,
   nen7510: NEN7510,
   iso9001: ISO9001,
+  pipeda: PIPEDA,
+  phipa: PHIPA,
 };
 
 /**
@@ -63,6 +67,8 @@ const BADGE_LABELS: Record<ComplianceBadge['type'], string> = {
   pci_dss: 'PCI DSS',
   nen7510: 'NEN 7510',
   iso9001: 'ISO 9001',
+  pipeda: 'PIPEDA',
+  phipa: 'PHIPA',
 };
 
 /**

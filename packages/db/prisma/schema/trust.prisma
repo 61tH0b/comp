@@ -24,6 +24,8 @@ model Trust {
   hipaa         Boolean @default(false)
   pci_dss       Boolean @default(false)
   iso9001       Boolean @default(false)
+  pipeda        Boolean @default(false)
+  phipa         Boolean @default(false)
 
   soc2_status      FrameworkStatus @default(started)
   soc2type1_status FrameworkStatus @default(started)
@@ -35,6 +37,8 @@ model Trust {
   hipaa_status     FrameworkStatus @default(started)
   pci_dss_status   FrameworkStatus @default(started)
   iso9001_status   FrameworkStatus @default(started)
+  pipeda_status    FrameworkStatus @default(started)
+  phipa_status     FrameworkStatus @default(started)
 
   // Overview section for public trust portal
   overviewTitle   String?
@@ -71,6 +75,8 @@ enum TrustFramework {
   pci_dss
   nen_7510
   iso_9001
+  pipeda
+  phipa
 }
 
 model TrustResource {
@@ -221,6 +227,7 @@ model TrustDocument {
   name        String
   description String?
   s3Key       String
+  category    TrustDocumentCategory @default(general)
 
   isActive Boolean @default(true)
 
@@ -229,6 +236,17 @@ model TrustDocument {
 
   @@index([organizationId])
   @@index([organizationId, isActive])
+  @@index([organizationId, category])
+}
+
+enum TrustDocumentCategory {
+  general
+  oipc_report
+  custodian_document
+  privacy_impact_assessment
+  threat_risk_assessment
+  penetration_test_report
+  compliance_certificate
 }
 
 model TrustCustomLink {

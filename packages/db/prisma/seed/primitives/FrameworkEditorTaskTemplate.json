@@ -738,5 +738,85 @@
     "createdAt": "2025-10-29 09:37:04.804",
     "updatedAt": "2026-01-14 21:33:59.041",
     "automationStatus": "MANUAL"
+  },
+  {
+    "id": "frk_tt_ca_privacy_officer",
+    "name": "Designate Privacy Officer",
+    "description": "Appoint and document a privacy officer designation as required by Canadian federal and provincial privacy legislation. Upload evidence of the appointment letter or board resolution, and confirm the privacy officer's contact information is published where required.\n\nEvidence required:\n- Privacy officer appointment letter or board resolution\n- Published contact information (website screenshot or internal directory listing)\n- Documented privacy officer responsibilities and scope",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_pia",
+    "name": "Conduct Privacy Impact Assessment",
+    "description": "Complete a Privacy Impact Assessment (PIA) for new systems, processes, or significant changes involving the collection, use, or disclosure of personal information. This is required under Quebec Law 25, Ontario PHIPA, and recommended under all Canadian privacy legislation.\n\nEvidence required:\n- Completed PIA document for each new system or change\n- Risk assessment and mitigation plan\n- Sign-off from the privacy officer\n- Record of any consultations with the applicable privacy commissioner",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_consent_review",
+    "name": "Review Consent Mechanisms",
+    "description": "Audit all consent collection points annually to ensure compliance with Canadian consent requirements under PIPEDA and applicable provincial legislation. Verify that consent is meaningful, clear, and obtained before or at the time of collection.\n\nEvidence required:\n- Inventory of all consent collection points (forms, websites, apps)\n- Review of consent language for clarity and compliance\n- Documentation of consent withdrawal mechanisms\n- Screenshots or samples of current consent forms",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_breach_test",
+    "name": "Test Breach Notification Process",
+    "description": "Conduct a tabletop exercise for breach response to validate the organization's ability to detect, assess, contain, and report breaches of personal information under Canadian federal and provincial requirements.\n\nEvidence required:\n- Tabletop exercise scenario and plan\n- Participant list and attendance records\n- Exercise results and findings report\n- Identified gaps and remediation actions\n- Updated breach notification contact lists for applicable commissioners",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_oipc_report",
+    "name": "OIPC Report Preparation",
+    "description": "Prepare and file OIPC compliance reports as required under Alberta PIPA. Maintain custodian documentation demonstrating compliance with OIPC directives, investigation findings, and compliance orders. This task covers Alberta-specific reporting obligations to the Office of the Information and Privacy Commissioner.\n\nEvidence required:\n- Completed OIPC compliance reports filed during the period\n- Records of responses to OIPC investigation reports\n- Documentation of compliance with any OIPC orders\n- Custodian documentation maintained as required by the Commissioner\n- Breach reports filed with the OIPC\n- Correspondence with the OIPC",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_custodian_review",
+    "name": "Custodian Documentation Review",
+    "description": "Review and update health information custodian documents to ensure ongoing compliance with provincial health privacy legislation (PHIPA, PHIA, PHIPAA). Verify that all custodian agreements, agent agreements, and information sharing arrangements are current.\n\nEvidence required:\n- Updated custodian designation records\n- Reviewed and current agent agreements\n- Information sharing agreements inventory\n- Privacy policy acknowledgements from all agents and staff\n- Records of custodian training completion",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_cross_provincial",
+    "name": "Cross-Provincial Compliance Audit",
+    "description": "Verify compliance across all applicable provincial privacy laws. For organizations operating in multiple Canadian provinces, audit adherence to each province's specific requirements including PIPEDA, PHIPA, Alberta PIPA, BC PIPA, Manitoba PHIA, and Quebec Law 25.\n\nEvidence required:\n- List of provinces where organization collects or processes personal information\n- Compliance matrix mapping requirements across applicable jurisdictions\n- Gap analysis identifying any provincial-specific gaps\n- Remediation plan for identified gaps\n- Sign-off from privacy officer on cross-provincial compliance status",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
+  },
+  {
+    "id": "frk_tt_ca_data_residency",
+    "name": "Canadian Data Residency Verification",
+    "description": "Verify that data hosting locations meet provincial requirements for Canadian data residency. Confirm that personal information and personal health information are stored and processed in compliance with applicable legislation, particularly for cross-border transfers under Quebec Law 25 and provincial health privacy acts.\n\nEvidence required:\n- Inventory of all data storage and processing locations\n- Data flow diagrams showing cross-border transfers\n- Privacy impact assessments for any cross-border transfers\n- Contractual safeguards with third-party processors located outside Canada\n- Confirmation that equivalent protection exists for any transferred data",
+    "frequency": "yearly",
+    "department": "gov",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "automationStatus": "AUTOMATED"
   }
 ]
