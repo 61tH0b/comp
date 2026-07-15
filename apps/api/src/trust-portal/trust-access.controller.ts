@@ -638,6 +638,25 @@ export class TrustAccessController {
     return this.trustAccessService.getFaqs(friendlyUrl);
   }
 
+  @Get(':friendlyUrl/frameworks')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({
+    summary: 'Get compliance frameworks for a trust portal',
+    description:
+      'Retrieve the enabled compliance frameworks and their statuses for a published trust portal (public compliance badges).',
+  })
+  @ApiParam({
+    name: 'friendlyUrl',
+    description: 'Trust Portal friendly URL or Organization ID',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Frameworks retrieved successfully',
+  })
+  async getPublicFrameworks(@Param('friendlyUrl') friendlyUrl: string) {
+    return this.trustAccessService.getPublicFrameworks(friendlyUrl);
+  }
+
   @Get(':friendlyUrl/overview')
   @HttpCode(HttpStatus.OK)
   @ApiOperation({
