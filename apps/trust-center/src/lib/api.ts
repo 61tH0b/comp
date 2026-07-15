@@ -1,4 +1,10 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:3333/v1';
+// Server-side (SSR / server components) can reach the API over the internal
+// Docker network; the browser must use the host-published URL. INTERNAL_API_URL
+// is only read on the server; NEXT_PUBLIC_API_URL is used in the browser.
+const API_URL =
+  (typeof window === 'undefined'
+    ? process.env.INTERNAL_API_URL || process.env.NEXT_PUBLIC_API_URL
+    : process.env.NEXT_PUBLIC_API_URL) || 'http://127.0.0.1:3333/v1';
 const ORG_SLUG = process.env.NEXT_PUBLIC_ORG_SLUG || 'autochart';
 
 export interface Framework {
