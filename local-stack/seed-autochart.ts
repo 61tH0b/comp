@@ -125,6 +125,21 @@ async function main() {
   }
   console.log(`Custom links: ${LINKS.length}`);
 
+  // 5. Owner user + member (needed to approve access requests locally)
+  let user = await db.user.findFirst({ where: { email: 'owner@autochart.ai' } });
+  if (!user) {
+    user = await db.user.create({
+      data: { name: 'Autochart Admin', email: 'owner@autochart.ai', emailVerified: true },
+    });
+  }
+  let member = await db.member.findFirst({ where: { organizationId: org.id, userId: user.id } });
+  if (!member) {
+    member = await db.member.create({
+      data: { organizationId: org.id, userId: user.id, role: 'owner' },
+    });
+  }
+  console.log(`Owner member: ${member.id} (user ${user.email})`);
+
   console.log('\nDone. Trust center data seeded for /autochart');
 }
 
