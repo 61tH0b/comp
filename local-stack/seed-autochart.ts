@@ -170,14 +170,21 @@ async function main() {
       'trailer<</Root 1 0 R>>\n%%EOF\n',
   );
   const { S3Client, PutObjectCommand } = await import('@aws-sdk/client-s3');
+  // Local default is MinIO; when SEED_S3=aws (e.g. CodeBuild against real S3)
+  // use the default endpoint + ambient credential chain instead.
+  const useMinio = process.env.SEED_S3 !== 'aws';
   const s3 = new S3Client({
     region: process.env.APP_AWS_REGION || 'us-east-1',
-    endpoint: process.env.APP_AWS_ENDPOINT || 'http://127.0.0.1:9000',
-    forcePathStyle: true,
-    credentials: {
-      accessKeyId: process.env.APP_AWS_ACCESS_KEY_ID || 'compai',
-      secretAccessKey: process.env.APP_AWS_SECRET_ACCESS_KEY || 'compai12345',
-    },
+    ...(useMinio
+      ? {
+          endpoint: process.env.APP_AWS_ENDPOINT || 'http://127.0.0.1:9000',
+          forcePathStyle: true,
+          credentials: {
+            accessKeyId: process.env.APP_AWS_ACCESS_KEY_ID || 'compai',
+            secretAccessKey: process.env.APP_AWS_SECRET_ACCESS_KEY || 'compai12345',
+          },
+        }
+      : {}),
   });
   await s3.send(
     new PutObjectCommand({
