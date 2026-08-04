@@ -24,6 +24,8 @@ import {
   ISO9001,
   NEN7510,
   PCIDSS,
+  PIPEDA,
+  PHIPA,
   SOC2Type1,
   SOC2Type2,
 } from './logos';
@@ -48,6 +50,8 @@ const trustPortalFormSchema = z.object({
   pcidss: z.boolean(),
   nen7510: z.boolean(),
   iso9001: z.boolean(),
+  pipeda: z.boolean(),
+  phipa: z.boolean(),
   soc2type1Status: z.enum(['started', 'in_progress', 'compliant']),
   soc2type2Status: z.enum(['started', 'in_progress', 'compliant']),
   iso27001Status: z.enum(['started', 'in_progress', 'compliant']),
@@ -57,6 +61,8 @@ const trustPortalFormSchema = z.object({
   pcidssStatus: z.enum(['started', 'in_progress', 'compliant']),
   nen7510Status: z.enum(['started', 'in_progress', 'compliant']),
   iso9001Status: z.enum(['started', 'in_progress', 'compliant']),
+  pipedaStatus: z.enum(['started', 'in_progress', 'compliant']),
+  phipaStatus: z.enum(['started', 'in_progress', 'compliant']),
 });
 
 const FRAMEWORK_KEY_TO_API_SLUG: Record<string, string> = {
@@ -69,6 +75,8 @@ const FRAMEWORK_KEY_TO_API_SLUG: Record<string, string> = {
   pcidss: 'pci_dss',
   nen7510: 'nen_7510',
   iso9001: 'iso_9001',
+  pipeda: 'pipeda',
+  phipa: 'phipa',
 };
 
 interface ComplianceResourceResponse {
@@ -100,7 +108,7 @@ type TrustCustomLink = {
 };
 
 type ComplianceBadge = {
-  type: 'soc2' | 'iso27001' | 'iso42001' | 'gdpr' | 'hipaa' | 'pci_dss' | 'nen7510' | 'iso9001';
+  type: 'soc2' | 'iso27001' | 'iso42001' | 'gdpr' | 'hipaa' | 'pci_dss' | 'nen7510' | 'iso9001' | 'pipeda' | 'phipa';
   verified: boolean;
 };
 
@@ -171,6 +179,10 @@ export function TrustPortalSwitch({
   nen7510Status: 'started' | 'in_progress' | 'compliant';
   iso9001: boolean;
   iso9001Status: 'started' | 'in_progress' | 'compliant';
+  pipeda: boolean;
+  pipedaStatus: 'started' | 'in_progress' | 'compliant';
+  phipa: boolean;
+  phipaStatus: 'started' | 'in_progress' | 'compliant';
   faqs: FaqItem[] | null;
   iso27001FileName?: string | null;
   iso42001FileName?: string | null;
@@ -181,6 +193,8 @@ export function TrustPortalSwitch({
   pcidssFileName?: string | null;
   nen7510FileName?: string | null;
   iso9001FileName?: string | null;
+  pipedaFileName?: string | null;
+  phipaFileName?: string | null;
   additionalDocuments: TrustPortalDocument[];
   overview: TrustOverviewData;
   customLinks: TrustCustomLink[];
@@ -199,6 +213,8 @@ export function TrustPortalSwitch({
     pcidss: pcidssFileName ?? null,
     nen7510: nen7510FileName ?? null,
     iso9001: iso9001FileName ?? null,
+    pipeda: pipedaFileName ?? null,
+    phipa: phipaFileName ?? null,
   });
 
   useEffect(() => {
@@ -212,6 +228,8 @@ export function TrustPortalSwitch({
       pcidss: pcidssFileName ?? null,
       nen7510: nen7510FileName ?? null,
       iso9001: iso9001FileName ?? null,
+      pipeda: pipedaFileName ?? null,
+      phipa: phipaFileName ?? null,
     });
   }, [
     iso27001FileName,
@@ -223,6 +241,8 @@ export function TrustPortalSwitch({
     pcidssFileName,
     nen7510FileName,
     iso9001FileName,
+    pipedaFileName,
+    phipaFileName,
   ]);
 
   const convertFileToBase64 = async (file: File): Promise<string> => {
@@ -311,6 +331,8 @@ export function TrustPortalSwitch({
       pcidss: pcidss ?? false,
       nen7510: nen7510 ?? false,
       iso9001: iso9001 ?? false,
+      pipeda: pipeda ?? false,
+      phipa: phipa ?? false,
       soc2type1Status: soc2type1Status ?? 'started',
       soc2type2Status: soc2type2Status ?? 'started',
       iso27001Status: iso27001Status ?? 'started',
@@ -320,6 +342,8 @@ export function TrustPortalSwitch({
       pcidssStatus: pcidssStatus ?? 'started',
       nen7510Status: nen7510Status ?? 'started',
       iso9001Status: iso9001Status ?? 'started',
+      pipedaStatus: pipedaStatus ?? 'started',
+      phipaStatus: phipaStatus ?? 'started',
     },
   });
 
@@ -653,6 +677,74 @@ export function TrustPortalSwitch({
                   frameworkKey="iso9001"
                   orgId={orgId}
                 />
+                {/* PIPEDA */}
+                <ComplianceFramework
+                  title="PIPEDA"
+                  description="Canadian federal privacy law governing how private-sector organizations collect, use, and disclose personal information."
+                  isEnabled={pipeda}
+                  status={pipedaStatus}
+                  onStatusChange={async (value) => {
+                    try {
+                      await updateTrustPortalFrameworks({
+                        orgId,
+                        pipedaStatus: value as 'started' | 'in_progress' | 'compliant',
+                      });
+                      toast.success('PIPEDA status updated');
+                    } catch (error) {
+                      toast.error('Failed to update PIPEDA status');
+                    }
+                  }}
+                  onToggle={async (checked) => {
+                    try {
+                      await updateTrustPortalFrameworks({
+                        orgId,
+                        pipeda: checked,
+                      });
+                      toast.success('PIPEDA status updated');
+                    } catch (error) {
+                      toast.error('Failed to update PIPEDA status');
+                    }
+                  }}
+                  fileName={certificateFiles.pipeda}
+                  onFileUpload={handleFileUpload}
+                  onFilePreview={handleFilePreview}
+                  frameworkKey="pipeda"
+                  orgId={orgId}
+                />
+                {/* PHIPA */}
+                <ComplianceFramework
+                  title="PHIPA"
+                  description="Ontario's health privacy law governing the collection, use, and disclosure of personal health information."
+                  isEnabled={phipa}
+                  status={phipaStatus}
+                  onStatusChange={async (value) => {
+                    try {
+                      await updateTrustPortalFrameworks({
+                        orgId,
+                        phipaStatus: value as 'started' | 'in_progress' | 'compliant',
+                      });
+                      toast.success('PHIPA status updated');
+                    } catch (error) {
+                      toast.error('Failed to update PHIPA status');
+                    }
+                  }}
+                  onToggle={async (checked) => {
+                    try {
+                      await updateTrustPortalFrameworks({
+                        orgId,
+                        phipa: checked,
+                      });
+                      toast.success('PHIPA status updated');
+                    } catch (error) {
+                      toast.error('Failed to update PHIPA status');
+                    }
+                  }}
+                  fileName={certificateFiles.phipa}
+                  onFileUpload={handleFileUpload}
+                  onFilePreview={handleFilePreview}
+                  frameworkKey="phipa"
+                  orgId={orgId}
+                />
               </div>
             </div>
           </TabsContent>
@@ -841,6 +933,14 @@ function ComplianceFramework({
     ) : title === 'ISO 9001' ? (
       <div className="h-16 w-16 flex items-center justify-center">
         <ISO9001 className="max-h-full max-w-full" />
+      </div>
+    ) : title === 'PIPEDA' ? (
+      <div className="h-16 w-16 flex items-center justify-center">
+        <PIPEDA className="max-h-full max-w-full" />
+      </div>
+    ) : title === 'PHIPA' ? (
+      <div className="h-16 w-16 flex items-center justify-center">
+        <PHIPA className="max-h-full max-w-full" />
       </div>
     ) : null;
 

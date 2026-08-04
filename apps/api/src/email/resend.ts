@@ -54,6 +54,32 @@ export const sendEmail = async ({
 
   const replyTo = marketing ? replyMarketing : undefined;
 
+  // Local dev: capture emails to a file instead of sending via Resend.
+  if (process.env.MOCK_EMAIL === 'true') {
+    try {
+      const { render } = await import('@react-email/render');
+      const html = await render(react as React.ReactElement);
+      const links = Array.from(html.matchAll(/href="([^"]+)"/g))
+        .map((m) => m[1])
+        .filter((u) => u && !u.startsWith('mailto:'));
+      const { appendFileSync, mkdirSync } = await import('fs');
+      const dir = process.env.MOCK_EMAIL_DIR || '/root/local-stack-data';
+      mkdirSync(dir, { recursive: true });
+      const id = `mock_${Date.now()}`;
+      appendFileSync(
+        `${dir}/emails.jsonl`,
+        JSON.stringify({ id, at: new Date().toISOString(), to: toAddress ?? to, subject, links }) + '\n',
+      );
+      // eslint-disable-next-line no-console
+      console.log(`[MOCK_EMAIL] to=${toAddress ?? to} subject="${subject}" links=${JSON.stringify(links)}`);
+      return { id };
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error('[MOCK_EMAIL] capture failed:', e);
+      return { id: `mock_error_${Date.now()}` };
+    }
+  }
+
   // 3) Guard against undefined
   if (!fromAddress) {
     throw new Error('Missing FROM address in environment variables');

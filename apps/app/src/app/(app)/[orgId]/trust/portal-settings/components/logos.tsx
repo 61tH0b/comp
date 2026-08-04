@@ -518,3 +518,27 @@ export const ISO9001 = (props: React.SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
+export const PIPEDA = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#F8F8F8" />
+    <path d="M16 12h32v4H16z" fill="#FF0000" />
+    <path d="M16 48h32v4H16z" fill="#FF0000" />
+    <path d="M32 20l3 6h-2v8h5l-6 10-6-10h5v-8h-2l3-6z" fill="#FF0000" />
+    <rect x="10" y="12" width="6" height="40" fill="#FF0000" />
+    <rect x="48" y="12" width="6" height="40" fill="#FF0000" />
+    <path d="M24 54h16" stroke="#333" strokeWidth="1" />
+    <text x="32" y="62" textAnchor="middle" fontSize="6" fontWeight="bold" fill="#333" fontFamily="system-ui">PIPEDA</text>
+  </svg>
+);
+
+export const PHIPA = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <rect width="64" height="64" rx="8" fill="#F8F8F8" />
+    <path d="M32 8C22 8 14 16 14 26v6c0 10 8 18 18 18s18-8 18-18v-6c0-10-8-18-18-18z" fill="none" stroke="#1D4ED8" strokeWidth="2.5" />
+    <path d="M32 14c-6.6 0-12 5.4-12 12v4c0 6.6 5.4 12 12 12s12-5.4 12-12v-4c0-6.6-5.4-12-12-12z" fill="#DBEAFE" />
+    <path d="M28 24h8v4h-8zM30 28h4v8h-4z" fill="#1D4ED8" />
+    <circle cx="32" cy="22" r="3" fill="#1D4ED8" />
+    <text x="32" y="58" textAnchor="middle" fontSize="6" fontWeight="bold" fill="#333" fontFamily="system-ui">PHIPA</text>
+  </svg>
+);

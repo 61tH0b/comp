@@ -151,5 +151,86 @@
     "createdAt": "2025-11-19 20:30:44.681",
     "updatedAt": "2025-11-24 21:22:25.364",
     "visible": true
+  },
+  {
+    "id": "frk_ca0001_pipeda_federal",
+    "name": "PIPEDA",
+    "description": "Personal Information Protection and Electronic Documents Act — Canadian federal privacy law governing how private-sector organizations collect, use, and disclose personal information in the course of commercial activities.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0002_phipa_ontario",
+    "name": "PHIPA",
+    "description": "Personal Health Information Protection Act — Ontario's health privacy law governing the collection, use, and disclosure of personal health information by health information custodians.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0003_ab_pipa",
+    "name": "Alberta PIPA",
+    "description": "Alberta Personal Information Protection Act — Governs the collection, use, and disclosure of personal information by private-sector organizations in Alberta.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0004_bc_pipa",
+    "name": "BC PIPA",
+    "description": "British Columbia Personal Information Protection Act — Governs the collection, use, and disclosure of personal information by private-sector organizations in British Columbia.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0005_mb_phia",
+    "name": "Manitoba PHIA",
+    "description": "Manitoba Personal Health Information Act — Governs the collection, use, disclosure, and security of personal health information by trustees in Manitoba.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0006_nb_phipaa",
+    "name": "New Brunswick PHIPAA",
+    "description": "New Brunswick Personal Health Information Privacy and Access Act — Governs the collection, use, disclosure, retention, and disposal of personal health information by custodians in New Brunswick.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0007_nl_phia",
+    "name": "Newfoundland PHIA",
+    "description": "Newfoundland and Labrador Personal Health Information Act — Governs the collection, use, disclosure, and disposal of personal health information by custodians in Newfoundland and Labrador.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0008_ns_phia",
+    "name": "Nova Scotia PHIA",
+    "description": "Nova Scotia Personal Health Information Act — Governs the collection, use, disclosure, and disposal of personal health information by custodians in Nova Scotia.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
+  },
+  {
+    "id": "frk_ca0009_qc_law25",
+    "name": "Quebec Law 25",
+    "description": "Quebec Act to modernize legislative provisions as regards the protection of personal information (Law 25) — Modernizes Quebec's privacy framework with mandatory privacy officers, privacy impact assessments, consent requirements, and breach notification.",
+    "version": "2024",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000",
+    "visible": true
   }
 ]

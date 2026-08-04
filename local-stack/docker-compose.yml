@@ -1,0 +1,129 @@
+# Full local trust.autochart.ai stack for macOS/Linux via Docker Desktop.
+#
+#   cd local-stack && docker compose up --build
+#   open http://localhost:3003      (trust center)
+#   open http://localhost:9001      (MinIO console: compai / compai12345)
+#
+# Services: Postgres, MinIO (object storage), a one-shot migrate+seed, the
+# scoped NestJS trust API, and the Next.js frontend. Redis is mocked in-process
+# (MOCK_EMAIL/MOCK_REDIS) so no extra container is required.
+name: autochart-trust
+
+x-build: &image
+  image: autochart-trust:local
+  build:
+    context: ..
+    dockerfile: local-stack/docker/Dockerfile
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: compai
+      POSTGRES_PASSWORD: compai
+      POSTGRES_DB: compai
+    ports:
+      - '5433:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U compai -d compai']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: compai
+      MINIO_ROOT_PASSWORD: compai12345
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - miniodata:/data
+
+  createbuckets:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      until mc alias set local http://minio:9000 compai compai12345; do echo 'waiting for minio...'; sleep 2; done &&
+      mc mb -p local/compai-assets local/compai-uploads local/compai-questionnaire local/compai-kb &&
+      echo 'buckets ready'
+      "
+
+  migrate-seed:
+    <<: *image
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://compai:compai@postgres:5432/compai?schema=public
+    command: >
+      /bin/sh -c "
+      cd packages/db && bunx prisma migrate deploy &&
+      cd /app && bun local-stack/seed-autochart.ts
+      "
+
+  trust-api:
+    <<: *image
+    depends_on:
+      migrate-seed:
+        condition: service_completed_successfully
+      createbuckets:
+        condition: service_completed_successfully
+    environment:
+      PORT: '3333'
+      DATABASE_URL: postgresql://compai:compai@postgres:5432/compai?schema=public
+      TRUST_APP_URL: http://localhost:3003
+      BETTER_AUTH_URL: http://localhost:3000
+      BETTER_AUTH_SECRET: local-dev-secret-please-change-0123456789abcdef
+      INTERNAL_API_TOKEN: local-internal-token
+      MOCK_EMAIL: 'true'
+      MOCK_REDIS: 'true'
+      UPSTASH_REDIS_REST_URL: http://localhost:6379
+      UPSTASH_REDIS_REST_TOKEN: local-dev-token
+      RESEND_API_KEY: re_local_placeholder
+      RESEND_FROM_SYSTEM: noreply@localhost
+      RESEND_FROM_DEFAULT: hello@localhost
+      APP_AWS_REGION: us-east-1
+      APP_AWS_ACCESS_KEY_ID: compai
+      APP_AWS_SECRET_ACCESS_KEY: compai12345
+      APP_AWS_ENDPOINT: http://minio:9000
+      APP_AWS_BUCKET_NAME: compai-uploads
+      APP_AWS_QUESTIONNAIRE_UPLOAD_BUCKET: compai-questionnaire
+      APP_AWS_KNOWLEDGE_BASE_BUCKET: compai-kb
+      APP_AWS_ORG_ASSETS_BUCKET: compai-assets
+      MOCK_EMAIL_DIR: /app/local-stack/.emails
+    ports:
+      - '3333:3333'
+    command: /bin/sh -c "cd /app/apps/api && bun trust-server.ts"
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -fs http://localhost:3333/v1/trust-access/autochart/frameworks || exit 1']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  trust-center:
+    <<: *image
+    depends_on:
+      trust-api:
+        condition: service_healthy
+    environment:
+      # Browser calls the host-published API; SSR calls it over the compose network
+      NEXT_PUBLIC_API_URL: http://localhost:3333/v1
+      INTERNAL_API_URL: http://trust-api:3333/v1
+      NEXT_PUBLIC_ORG_SLUG: autochart
+      NEXT_PUBLIC_ORG_NAME: Autochart.ai
+      NEXT_PUBLIC_CONTACT_EMAIL: security@autochart.ai
+    ports:
+      - '3003:3003'
+    command: /bin/sh -c "cd /app/apps/trust-center && bunx next dev -H 0.0.0.0 -p 3003"
+
+volumes:
+  pgdata:
+  miniodata:

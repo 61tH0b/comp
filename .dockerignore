@@ -175,3 +175,6 @@ test-results/
 **/*.dylib*
 **/*.node
 **/*.pack
+# Never bake env files into images (compose provides env)
+**/.env
+**/.env.local

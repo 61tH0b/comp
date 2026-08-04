@@ -23,7 +23,9 @@ type ComplianceBadgeType =
   | 'hipaa'
   | 'pci_dss'
   | 'nen7510'
-  | 'iso9001';
+  | 'iso9001'
+  | 'pipeda'
+  | 'phipa';
 
 interface ComplianceBadge {
   type: ComplianceBadgeType;
@@ -63,6 +65,12 @@ function mapCertificationToBadgeType(certType: string): ComplianceBadgeType | nu
   }
   if (normalized.includes('iso9001') || normalized.includes('iso 9001')) {
     return 'iso9001';
+  }
+  if (normalized.includes('pipeda')) {
+    return 'pipeda';
+  }
+  if (normalized.includes('phipa')) {
+    return 'phipa';
   }
 
   return null;
@@ -275,6 +283,8 @@ export default async function TrustPage({ params }: { params: Promise<{ orgId: s
         pcidss={trustPortal?.pcidss ?? false}
         nen7510={trustPortal?.nen7510 ?? false}
         iso9001={trustPortal?.iso9001 ?? false}
+        pipeda={trustPortal?.pipeda ?? false}
+        phipa={trustPortal?.phipa ?? false}
         soc2type1Status={trustPortal?.soc2type1Status ?? 'started'}
         soc2type2Status={trustPortal?.soc2type2Status ?? 'started'}
         iso27001Status={trustPortal?.iso27001Status ?? 'started'}
@@ -284,6 +294,8 @@ export default async function TrustPage({ params }: { params: Promise<{ orgId: s
         pcidssStatus={trustPortal?.pcidssStatus ?? 'started'}
         nen7510Status={trustPortal?.nen7510Status ?? 'started'}
         iso9001Status={trustPortal?.iso9001Status ?? 'started'}
+        pipedaStatus={trustPortal?.pipedaStatus ?? 'started'}
+        phipaStatus={trustPortal?.phipaStatus ?? 'started'}
         faqs={faqs}
         iso27001FileName={certificateFiles.iso27001FileName}
         iso42001FileName={certificateFiles.iso42001FileName}
@@ -294,6 +306,8 @@ export default async function TrustPage({ params }: { params: Promise<{ orgId: s
         pcidssFileName={certificateFiles.pcidssFileName}
         nen7510FileName={certificateFiles.nen7510FileName}
         iso9001FileName={certificateFiles.iso9001FileName}
+        pipedaFileName={certificateFiles.pipedaFileName}
+        phipaFileName={certificateFiles.phipaFileName}
         additionalDocuments={additionalDocuments.map((doc) => ({
           id: doc.id,
           name: doc.name,
@@ -373,6 +387,10 @@ const getTrustPortal = async (orgId: string) => {
     nen7510Status: trustPortal?.nen7510_status,
     iso9001: trustPortal?.iso9001,
     iso9001Status: trustPortal?.iso9001_status,
+    pipeda: trustPortal?.pipeda,
+    pipedaStatus: trustPortal?.pipeda_status,
+    phipa: trustPortal?.phipa,
+    phipaStatus: trustPortal?.phipa_status,
     friendlyUrl: trustPortal?.friendlyUrl,
     overviewTitle: trustPortal?.overviewTitle,
     overviewContent: trustPortal?.overviewContent,
@@ -421,6 +439,8 @@ type CertificateFiles = {
   pcidssFileName: string | null;
   nen7510FileName: string | null;
   iso9001FileName: string | null;
+  pipedaFileName: string | null;
+  phipaFileName: string | null;
 };
 
 const API_FRAMEWORK_TO_PROP: Record<string, keyof CertificateFiles> = {
@@ -433,6 +453,8 @@ const API_FRAMEWORK_TO_PROP: Record<string, keyof CertificateFiles> = {
   pci_dss: 'pcidssFileName',
   nen_7510: 'nen7510FileName',
   iso_9001: 'iso9001FileName',
+  pipeda: 'pipedaFileName',
+  phipa: 'phipaFileName',
 };
 
 const DEFAULT_CERTIFICATE_FILES: CertificateFiles = {
@@ -445,6 +467,8 @@ const DEFAULT_CERTIFICATE_FILES: CertificateFiles = {
   pcidssFileName: null,
   nen7510FileName: null,
   iso9001FileName: null,
+  pipedaFileName: null,
+  phipaFileName: null,
 };
 
 async function fetchComplianceCertificates(orgId: string): Promise<CertificateFiles> {

@@ -8818,5 +8818,653 @@
     "identifier": "QMS-10.2-01",
     "createdAt": "2025-11-19 20:44:19.831",
     "updatedAt": "2025-11-19 20:44:19.831"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_01",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Accountability",
+    "description": "An organization is responsible for personal information under its control. It must designate an individual or individuals who are accountable for the organization's compliance with the ten fair information principles.",
+    "identifier": "pipeda-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_02",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Identifying Purposes",
+    "description": "The purposes for which personal information is collected must be identified by the organization at or before the time the information is collected.",
+    "identifier": "pipeda-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_03",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Consent",
+    "description": "The knowledge and consent of the individual are required for the collection, use, or disclosure of personal information, except where inappropriate.",
+    "identifier": "pipeda-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_04",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Limiting Collection",
+    "description": "The collection of personal information must be limited to that which is necessary for the purposes identified by the organization. Information must be collected by fair and lawful means.",
+    "identifier": "pipeda-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_05",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Limiting Use, Disclosure, and Retention",
+    "description": "Personal information must not be used or disclosed for purposes other than those for which it was collected, except with the consent of the individual or as required by law. Personal information must be retained only as long as necessary for the fulfilment of those purposes.",
+    "identifier": "pipeda-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_06",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Accuracy",
+    "description": "Personal information must be as accurate, complete, and up-to-date as is necessary for the purposes for which it is to be used.",
+    "identifier": "pipeda-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_07",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Safeguards",
+    "description": "Personal information must be protected by security safeguards appropriate to the sensitivity of the information, including physical, organizational, and technological measures.",
+    "identifier": "pipeda-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_08",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Openness",
+    "description": "An organization must make readily available to individuals specific information about its policies and practices relating to the management of personal information.",
+    "identifier": "pipeda-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_09",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Individual Access",
+    "description": "Upon request, an individual must be informed of the existence, use, and disclosure of his or her personal information and be given access to that information. An individual may challenge the accuracy and completeness of the information and have it amended as appropriate.",
+    "identifier": "pipeda-9",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_pipeda_10",
+    "frameworkId": "frk_ca0001_pipeda_federal",
+    "name": "Challenging Compliance",
+    "description": "An individual must be able to address a challenge concerning compliance with the above principles to the designated individual or individuals accountable for the organization's compliance.",
+    "identifier": "pipeda-10",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_01",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Health Information Custodian Obligations",
+    "description": "Health information custodians must comply with the obligations set out in PHIPA regarding the collection, use, disclosure, retention, and disposal of personal health information. Custodians must take reasonable steps to ensure information is protected against theft, loss, and unauthorized access.",
+    "identifier": "phipa-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_02",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Consent for Collection",
+    "description": "A health information custodian must not collect personal health information about an individual unless the individual consents to the collection and the collection is necessary for a lawful purpose.",
+    "identifier": "phipa-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_03",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Circle of Care",
+    "description": "Personal health information may be disclosed within the circle of care for the purpose of providing or assisting in the provision of health care to the individual, subject to the assumption of implied consent unless the individual has expressly withheld or withdrawn consent.",
+    "identifier": "phipa-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_04",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Lockbox Provisions",
+    "description": "An individual has the right to request that a health information custodian not use or disclose their personal health information (lockbox). The custodian must comply with the request unless disclosure is permitted or required by law.",
+    "identifier": "phipa-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_05",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Agent Requirements",
+    "description": "A health information custodian that retains an agent must ensure the agent complies with PHIPA and any restrictions imposed by the custodian. The agent must not collect, use, disclose, retain, or dispose of personal health information except as permitted by the custodian.",
+    "identifier": "phipa-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_06",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Electronic Health Records",
+    "description": "Health information custodians that maintain electronic health records must comply with prescribed requirements for the collection, use, disclosure, and protection of personal health information in electronic form, including access controls, audit logging, and system security standards.",
+    "identifier": "phipa-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_07",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Breach Notification",
+    "description": "A health information custodian must notify the individual at the first reasonable opportunity if personal health information is stolen, lost, or accessed by unauthorized persons. The custodian must also notify the Information and Privacy Commissioner of Ontario.",
+    "identifier": "phipa-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_08",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Privacy Impact Assessments",
+    "description": "Health information custodians must conduct a privacy impact assessment before implementing any new information system or changes to existing systems that involve the collection, use, or disclosure of personal health information.",
+    "identifier": "phipa-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_09",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Data Retention & Disposal",
+    "description": "Health information custodians must establish and follow retention schedules for personal health information. When information is no longer needed, it must be securely disposed of in a manner that prevents unauthorized access or reconstruction.",
+    "identifier": "phipa-9",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_phipa_10",
+    "frameworkId": "frk_ca0002_phipa_ontario",
+    "name": "Complaint & Inquiry Process",
+    "description": "Health information custodians must have a process in place to receive and respond to complaints and inquiries about their privacy practices. Individuals have the right to complain to the Information and Privacy Commissioner of Ontario.",
+    "identifier": "phipa-10",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_01",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Accountability & Privacy Officer",
+    "description": "An organization is responsible for personal information under its control and must designate one or more individuals to be accountable for the organization's compliance with Alberta PIPA. The privacy officer is responsible for developing and implementing privacy policies and practices.",
+    "identifier": "ab-pipa-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_02",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Reasonable Purpose for Collection",
+    "description": "An organization may only collect personal information for purposes that a reasonable person would consider appropriate in the circumstances. The organization must identify the purposes before or at the time of collection.",
+    "identifier": "ab-pipa-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_03",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Consent Requirements",
+    "description": "An organization must obtain consent of the individual for the collection, use, or disclosure of personal information, except where the Act provides otherwise. Consent may be express or implied depending on the sensitivity of the information.",
+    "identifier": "ab-pipa-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_04",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Limiting Collection",
+    "description": "An organization must limit the collection of personal information to what is reasonable for the identified purposes. Information must not be collected indiscriminately.",
+    "identifier": "ab-pipa-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_05",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Limiting Use & Disclosure",
+    "description": "An organization must not use or disclose personal information for purposes other than those for which it was collected, except with the consent of the individual or as permitted by law. Information must be retained only as long as necessary.",
+    "identifier": "ab-pipa-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_06",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Accuracy",
+    "description": "An organization must make a reasonable effort to ensure that personal information collected is accurate, complete, and up-to-date for the purposes for which it is to be used.",
+    "identifier": "ab-pipa-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_07",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Safeguards",
+    "description": "An organization must protect personal information by making reasonable security arrangements against such risks as unauthorized access, collection, use, disclosure, copying, modification, disposal, or destruction.",
+    "identifier": "ab-pipa-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_08",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Openness",
+    "description": "An organization must make available to any person specific information about its personal information policies and practices, including the type of information held, how it is used, and the identity of the privacy officer.",
+    "identifier": "ab-pipa-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_09",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "OIPC Reporting & Compliance",
+    "description": "Organizations must comply with Alberta's Office of the Information and Privacy Commissioner (OIPC) investigation and reporting requirements. This includes responding to OIPC investigation reports, complying with OIPC compliance orders, maintaining custodian documentation as required by the Commissioner, filing mandatory breach reports with the OIPC, and cooperating with OIPC reviews and audits. Organizations must maintain records sufficient to demonstrate compliance with OIPC directives and orders.",
+    "identifier": "ab-pipa-9",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ab_pipa_10",
+    "frameworkId": "frk_ca0003_ab_pipa",
+    "name": "Individual Access & Correction",
+    "description": "An individual has the right to request access to their personal information held by an organization and to request correction of any inaccuracies. The organization must respond within 45 days and provide reasons for any refusal.",
+    "identifier": "ab-pipa-10",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_01",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Accountability",
+    "description": "An organization is responsible for personal information under its control and must designate an individual to be responsible for the organization's compliance with BC PIPA.",
+    "identifier": "bc-pipa-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_02",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Consent",
+    "description": "An organization must obtain consent for the collection, use, or disclosure of personal information, except where the Act provides otherwise. Consent must be meaningful and individuals must understand what they are consenting to.",
+    "identifier": "bc-pipa-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_03",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Collection Limitations",
+    "description": "An organization may only collect personal information that is necessary to fulfil the identified purposes and must collect it by fair and lawful means.",
+    "identifier": "bc-pipa-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_04",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Use & Disclosure Limitations",
+    "description": "An organization may only use or disclose personal information for the purposes for which it was collected or for purposes that a reasonable person would consider appropriate in the circumstances.",
+    "identifier": "bc-pipa-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_05",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Accuracy",
+    "description": "An organization must make a reasonable effort to ensure personal information is accurate and complete for the purposes for which it is used.",
+    "identifier": "bc-pipa-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_06",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Safeguards",
+    "description": "An organization must protect personal information in its custody or control by making reasonable security arrangements to prevent unauthorized access, collection, use, disclosure, copying, modification, or disposal.",
+    "identifier": "bc-pipa-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_07",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Openness",
+    "description": "An organization must make information available about its personal information policies and practices, including the type of information held and the purposes for which it is used.",
+    "identifier": "bc-pipa-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_bc_pipa_08",
+    "frameworkId": "frk_ca0004_bc_pipa",
+    "name": "Individual Access",
+    "description": "On request, an individual must be given access to their personal information held by the organization, subject to limited exceptions, and be given the ability to request corrections.",
+    "identifier": "bc-pipa-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_01",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Trustee Obligations",
+    "description": "A trustee that has custody or control of personal health information must comply with PHIA and is responsible for ensuring that personal health information is protected. Trustees include health professionals, health care facilities, and public bodies.",
+    "identifier": "mb-phia-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_02",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Consent for Collection, Use & Disclosure",
+    "description": "A trustee must not collect, use, or disclose personal health information without the informed consent of the individual, except where authorized by the Act. Consent may be express or implied depending on the circumstances.",
+    "identifier": "mb-phia-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_03",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Collection Limitations",
+    "description": "A trustee must limit the collection of personal health information to the minimum amount necessary to accomplish the purpose for which it is collected.",
+    "identifier": "mb-phia-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_04",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Use & Disclosure Limitations",
+    "description": "A trustee must limit the use and disclosure of personal health information to the minimum amount necessary for the identified purpose and must not use or disclose the information for other purposes without consent.",
+    "identifier": "mb-phia-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_05",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Safeguards",
+    "description": "A trustee must take reasonable steps to maintain administrative, technical, and physical safeguards to protect personal health information against theft, loss, unauthorized access, use, disclosure, copying, modification, or disposal.",
+    "identifier": "mb-phia-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_06",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Breach Notification",
+    "description": "A trustee must notify affected individuals and the Manitoba Ombudsman when there has been a breach of security safeguards involving personal health information that creates a real risk of significant harm.",
+    "identifier": "mb-phia-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_07",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Individual Access Rights",
+    "description": "An individual has the right to request access to their personal health information held by a trustee and to request corrections. The trustee must respond within a specified timeframe.",
+    "identifier": "mb-phia-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_mb_phia_08",
+    "frameworkId": "frk_ca0005_mb_phia",
+    "name": "Complaint Process",
+    "description": "Individuals have the right to file complaints with the trustee or with the Manitoba Ombudsman regarding the handling of their personal health information. Trustees must have a complaint process in place.",
+    "identifier": "mb-phia-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_01",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Custodian Obligations",
+    "description": "A custodian must protect the privacy of personal health information in their custody or control and comply with the requirements of PHIPAA regarding collection, use, disclosure, retention, and disposal.",
+    "identifier": "nb-phipaa-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_02",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Consent Requirements",
+    "description": "A custodian must obtain consent before collecting, using, or disclosing personal health information unless an exception under the Act applies. Consent must be knowledgeable and voluntary.",
+    "identifier": "nb-phipaa-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_03",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Collection & Use Limitations",
+    "description": "A custodian must limit the collection and use of personal health information to that which is necessary for the identified purposes. Information must be collected directly from the individual where possible.",
+    "identifier": "nb-phipaa-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_04",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Safeguards & Security",
+    "description": "A custodian must implement reasonable administrative, technical, and physical safeguards to protect personal health information from unauthorized access, use, disclosure, or destruction.",
+    "identifier": "nb-phipaa-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_05",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Individual Access & Correction",
+    "description": "An individual has the right to access their personal health information and to request corrections. The custodian must respond within the prescribed timeframe and provide reasons for any refusal.",
+    "identifier": "nb-phipaa-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nb_phipaa_06",
+    "frameworkId": "frk_ca0006_nb_phipaa",
+    "name": "Breach Notification & Complaints",
+    "description": "A custodian must notify affected individuals of a breach of personal health information. Individuals may file complaints with the custodian or the Access and Privacy Commissioner regarding the handling of their information.",
+    "identifier": "nb-phipaa-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_01",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Custodian Responsibilities",
+    "description": "A custodian is responsible for the protection of personal health information in their custody or control and must comply with PHIA requirements for collection, use, disclosure, and security.",
+    "identifier": "nl-phia-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_02",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Consent for Collection & Disclosure",
+    "description": "A custodian must obtain the consent of the individual before collecting, using, or disclosing personal health information unless authorized by the Act. Implied consent is permitted within the circle of care.",
+    "identifier": "nl-phia-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_03",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Collection & Use Limitations",
+    "description": "A custodian must limit the collection and use of personal health information to the minimum amount necessary to achieve the identified purpose.",
+    "identifier": "nl-phia-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_04",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Security Safeguards",
+    "description": "A custodian must take reasonable steps to protect personal health information through administrative, technical, and physical safeguards appropriate to the sensitivity of the information.",
+    "identifier": "nl-phia-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_05",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Individual Access Rights",
+    "description": "An individual has the right to access their personal health information held by a custodian and to request corrections to inaccurate or incomplete information.",
+    "identifier": "nl-phia-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_nl_phia_06",
+    "frameworkId": "frk_ca0007_nl_phia",
+    "name": "Complaints & Review",
+    "description": "Individuals may file complaints with the custodian or the Information and Privacy Commissioner regarding the handling of their personal health information. The Commissioner may investigate and issue recommendations.",
+    "identifier": "nl-phia-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_01",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Custodian Obligations",
+    "description": "A custodian must protect the confidentiality of personal health information and comply with the requirements of Nova Scotia PHIA regarding its collection, use, disclosure, retention, and disposal.",
+    "identifier": "ns-phia-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_02",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Consent Requirements",
+    "description": "A custodian must obtain consent before collecting, using, or disclosing personal health information unless an exception applies. Consent may be express, implied, or deemed depending on the circumstances.",
+    "identifier": "ns-phia-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_03",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Collection & Use Limitations",
+    "description": "A custodian must limit the collection of personal health information to what is reasonably necessary for the lawful purpose and must not use the information for other purposes without consent.",
+    "identifier": "ns-phia-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_04",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Safeguards",
+    "description": "A custodian must implement reasonable administrative, technical, and physical safeguards to protect personal health information in its custody or control.",
+    "identifier": "ns-phia-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_05",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Individual Access & Correction",
+    "description": "An individual has the right to request access to their personal health information and to request corrections. The custodian must respond within the prescribed timeframe.",
+    "identifier": "ns-phia-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_ns_phia_06",
+    "frameworkId": "frk_ca0008_ns_phia",
+    "name": "Breach Notification & Complaints",
+    "description": "A custodian must notify affected individuals and the Review Officer of a breach involving personal health information. Individuals may file complaints regarding the custodian's privacy practices.",
+    "identifier": "ns-phia-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_01",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Privacy Officer Designation",
+    "description": "Organizations must designate a person responsible for the protection of personal information. The title and contact information of this person must be published on the organization's website.",
+    "identifier": "qc-law25-1",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_02",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Privacy Impact Assessments",
+    "description": "Organizations must conduct a privacy impact assessment before implementing or modifying any information system or electronic service delivery involving the collection, use, or disclosure of personal information.",
+    "identifier": "qc-law25-2",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_03",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Consent & Transparency",
+    "description": "Consent must be clear, free, and informed. Organizations must provide individuals with clear and simple language about the purposes and means of collection, and obtain express consent for sensitive information.",
+    "identifier": "qc-law25-3",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_04",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Breach Notification",
+    "description": "Organizations must notify the Commission d'acces a l'information (CAI) and affected individuals of any confidentiality incident involving personal information that presents a risk of serious injury.",
+    "identifier": "qc-law25-4",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_05",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Automated Decision-Making Transparency",
+    "description": "Organizations must inform individuals when a decision is made exclusively by automated processing of their personal information. Individuals have the right to be informed of the personal information used, the reasons and principal factors leading to the decision, and the right to have the decision reviewed by a person.",
+    "identifier": "qc-law25-5",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_06",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Data Governance Framework",
+    "description": "Organizations must establish and implement governance policies and practices regarding personal information, including roles and responsibilities, retention and destruction schedules, and a process for handling complaints.",
+    "identifier": "qc-law25-6",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_07",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Cross-Border Transfers",
+    "description": "Before communicating personal information outside Quebec, the organization must conduct a privacy impact assessment and ensure the information will receive protection equivalent to that provided under Quebec law.",
+    "identifier": "qc-law25-7",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_rq_ca_qc_law25_08",
+    "frameworkId": "frk_ca0009_qc_law25",
+    "name": "Anonymization & De-identification",
+    "description": "Organizations that anonymize personal information must do so according to generally accepted best practices and maintain records of the anonymization process. De-identified information must be protected against re-identification.",
+    "identifier": "qc-law25-8",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
   }
 ]

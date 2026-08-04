@@ -1,0 +1,14 @@
+version: 0.2
+# Runs prisma migrations + the Autochart seed against RDS (DATABASE_URL env).
+phases:
+  install:
+    commands:
+      - curl -fsSL https://bun.sh/install | bash
+      - export PATH="$HOME/.bun/bin:$PATH"
+  build:
+    commands:
+      - export PATH="$HOME/.bun/bin:$PATH"
+      - bun install
+      - cd packages/db && bunx prisma migrate deploy && cd ../..
+      - cd packages/db && bunx prisma generate && cd ../..
+      - SEED_S3=aws bun local-stack/seed-autochart.ts

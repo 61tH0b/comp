@@ -348,5 +348,75 @@
     "description": "ISO 9001 Controls",
     "createdAt": "2025-11-19 23:34:11.538",
     "updatedAt": "2025-11-19 23:34:11.538"
+  },
+  {
+    "id": "frk_ct_ca_privacy_officer",
+    "name": "Privacy Officer Designation",
+    "description": "Designate and document a Privacy Officer responsible for overseeing compliance with Canadian federal and provincial privacy legislation, including PIPEDA and applicable provincial Acts.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_consent_mgmt",
+    "name": "Consent Management",
+    "description": "Implement and maintain processes for obtaining, recording, and managing meaningful consent for the collection, use, and disclosure of personal information in accordance with Canadian privacy requirements.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_breach_notify",
+    "name": "Canadian Breach Notification",
+    "description": "Establish breach detection, assessment, and notification procedures compliant with Canadian federal and provincial breach notification requirements, including mandatory reporting to the Privacy Commissioner and affected individuals.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_pia",
+    "name": "Privacy Impact Assessment",
+    "description": "Conduct Privacy Impact Assessments (PIAs) before implementing new systems, processes, or initiatives that involve the collection, use, or disclosure of personal information, as required by Canadian privacy legislation.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_dsar",
+    "name": "Data Subject Access Request Process",
+    "description": "Implement a formal process for receiving, tracking, and fulfilling individual access and correction requests within the timeframes prescribed by applicable Canadian privacy legislation.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_data_residency",
+    "name": "Canadian Data Residency",
+    "description": "Ensure personal information is stored and processed in compliance with Canadian and provincial data residency requirements, including conducting assessments before any cross-border or cross-provincial transfer of personal information.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_oipc_compliance",
+    "name": "OIPC Compliance & Reporting",
+    "description": "Maintain compliance with Alberta's Office of the Information and Privacy Commissioner (OIPC) requirements, including responding to investigation reports, complying with compliance orders, filing mandatory breach reports, and maintaining custodian documentation as directed by the Commissioner.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_custodian_docs",
+    "name": "Custodian Document Management",
+    "description": "Establish and maintain comprehensive documentation for health information custodians, including records of information practices, privacy policies, consent records, agent agreements, and evidence of compliance with custodian obligations under applicable provincial health privacy legislation.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_circle_of_care",
+    "name": "Circle of Care",
+    "description": "Define and enforce circle of care policies for the sharing of personal health information among health information custodians and their agents for the purpose of providing or assisting in the provision of health care, including managing implied consent and lockbox provisions.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
+  },
+  {
+    "id": "frk_ct_ca_retention_disposal",
+    "name": "Data Retention & Secure Disposal",
+    "description": "Implement data retention schedules and secure disposal procedures for personal and personal health information, ensuring information is retained only as long as necessary and destroyed in a manner that prevents unauthorized access or reconstruction.",
+    "createdAt": "2026-03-02 00:00:00.000",
+    "updatedAt": "2026-03-02 00:00:00.000"
   }
 ]

@@ -1872,6 +1872,8 @@ export class TrustAccessService {
       | 'pci_dss'
       | 'nen7510'
       | 'iso9001'
+      | 'pipeda'
+      | 'phipa'
     > = {
       [TrustFramework.iso_27001]: 'iso27001',
       [TrustFramework.iso_42001]: 'iso42001',
@@ -1882,6 +1884,8 @@ export class TrustAccessService {
       [TrustFramework.pci_dss]: 'pci_dss',
       [TrustFramework.nen_7510]: 'nen7510',
       [TrustFramework.iso_9001]: 'iso9001',
+      [TrustFramework.pipeda]: 'pipeda',
+      [TrustFramework.phipa]: 'phipa',
     };
 
     const enabledField = frameworkFieldMap[framework];
@@ -2380,6 +2384,47 @@ export class TrustAccessService {
       name: `${organizationName} - All Policies (ZIP)`,
       downloadUrl,
       policyCount: policies.length,
+    };
+  }
+
+  async getPublicFrameworks(friendlyUrl: string) {
+    const trust = await this.findPublishedTrustByRouteId(friendlyUrl);
+    const t = await db.trust.findUnique({
+      where: { organizationId: trust.organizationId },
+      select: {
+        soc2type1: true, soc2type1_status: true,
+        soc2type2: true, soc2type2_status: true,
+        iso27001: true, iso27001_status: true,
+        iso42001: true, iso42001_status: true,
+        nen7510: true, nen7510_status: true,
+        gdpr: true, gdpr_status: true,
+        hipaa: true, hipaa_status: true,
+        pci_dss: true, pci_dss_status: true,
+        iso9001: true, iso9001_status: true,
+        pipeda: true, pipeda_status: true,
+        phipa: true, phipa_status: true,
+      },
+    });
+    if (!t) return { frameworks: [] };
+
+    const defs: { slug: string; name: string; enabled: boolean; status: string }[] = [
+      { slug: 'soc2_type1', name: 'SOC 2 Type I', enabled: t.soc2type1, status: t.soc2type1_status },
+      { slug: 'soc2_type2', name: 'SOC 2 Type II', enabled: t.soc2type2, status: t.soc2type2_status },
+      { slug: 'iso_27001', name: 'ISO 27001', enabled: t.iso27001, status: t.iso27001_status },
+      { slug: 'iso_42001', name: 'ISO 42001', enabled: t.iso42001, status: t.iso42001_status },
+      { slug: 'nen_7510', name: 'NEN 7510', enabled: t.nen7510, status: t.nen7510_status },
+      { slug: 'gdpr', name: 'GDPR', enabled: t.gdpr, status: t.gdpr_status },
+      { slug: 'hipaa', name: 'HIPAA', enabled: t.hipaa, status: t.hipaa_status },
+      { slug: 'pci_dss', name: 'PCI DSS', enabled: t.pci_dss, status: t.pci_dss_status },
+      { slug: 'iso_9001', name: 'ISO 9001', enabled: t.iso9001, status: t.iso9001_status },
+      { slug: 'pipeda', name: 'PIPEDA', enabled: t.pipeda, status: t.pipeda_status },
+      { slug: 'phipa', name: 'PHIPA', enabled: t.phipa, status: t.phipa_status },
+    ];
+
+    return {
+      frameworks: defs
+        .filter((d) => d.enabled)
+        .map((d) => ({ slug: d.slug, name: d.name, status: d.status, enabled: true })),
     };
   }
 
