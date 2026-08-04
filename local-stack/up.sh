@@ -8,11 +8,16 @@ export DATABASE_URL="postgresql://compai@127.0.0.1:5433/compai?schema=public"
 mkdir -p "$DATA/logs"
 
 echo "== Postgres =="
-if ! curl -s 127.0.0.1:5433 >/dev/null 2>&1 && ! su pg -c "$PGBIN/pg_isready -h 127.0.0.1 -p 5433" >/dev/null 2>&1; then
-  su pg -c "$PGBIN/pg_ctl -D $PGDATA -l $DATA/logs/pg.log -o '-p 5433 -k /tmp -c listen_addresses=127.0.0.1' start" 2>/dev/null || echo "  (already running or start failed)"
-  sleep 3
+# NB: log must live under /home/pg (the pg user cannot write inside /root),
+# and pg_isready must pass a real role (-U compai), not the OS user name.
+PGLOG=/home/pg/data/logs/pg.log
+if ! $PGBIN/pg_isready -h 127.0.0.1 -p 5433 -U compai >/dev/null 2>&1; then
+  rm -f "$PGDATA/postmaster.pid"
+  su pg -c "$PGBIN/pg_ctl -D $PGDATA -l $PGLOG -o '-p 5433 -k /tmp -c listen_addresses=127.0.0.1' start" || {
+    echo "  pg_ctl failed; log tail:"; tail -5 "$PGLOG"; }
+  sleep 2
 fi
-su pg -c "$PGBIN/pg_isready -h 127.0.0.1 -p 5433" && echo "  PG ready"
+$PGBIN/pg_isready -h 127.0.0.1 -p 5433 -U compai && echo "  PG ready"
 
 echo "== Redis =="
 redis-cli -p 6380 ping >/dev/null 2>&1 || redis-server --port 6380 --dir "$DATA/redis" --daemonize yes --logfile "$DATA/logs/redis.log" --save ""

@@ -39,6 +39,20 @@ bash local-stack/start-trust-api.sh
 bash local-stack/start-trust-center.sh
 ```
 
+## Automated tests
+
+```bash
+bash local-stack/test.sh          # 20-test E2E suite against the running stack
+bash local-stack/test.sh --full   # + API type-check + frontend production build
+```
+
+The suite (`apps/api/trust-e2e.test.ts`) covers the public content contract
+(frameworks/overview/faqs/vendors/links/favicon shapes), the full NDA
+lifecycle (request → duplicate rejection → approve → NDA email → sign →
+access email → gated portal → watermarked NDA PDF from object storage →
+document signed-URL download → reclaim), negative cases (bad tokens, unknown
+slug), and the allowed-domain NDA bypass.
+
 ## Smoke test
 
 ```bash

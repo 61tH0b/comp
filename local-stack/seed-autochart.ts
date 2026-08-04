@@ -140,6 +140,71 @@ async function main() {
   }
   console.log(`Owner member: ${member.id} (user ${user.email})`);
 
+  // 6. Sample gated content: a published policy + a trust document backed by a
+  // real PDF object in MinIO, so the access portal tabs have data and the
+  // signed-URL download path is exercisable.
+  const policyName = 'Information Security Policy';
+  const existingPolicy = await db.policy.findFirst({
+    where: { organizationId: org.id, name: policyName },
+  });
+  if (!existingPolicy) {
+    await db.policy.create({
+      data: {
+        organizationId: org.id,
+        name: policyName,
+        description: 'How Aya Health Technologies protects systems and data.',
+        status: 'published',
+        isArchived: false,
+        lastPublishedAt: new Date(),
+      },
+    });
+  }
+  console.log(`Policy: ${policyName} (published)`);
+
+  const s3Key = `${org.id}/trust-documents/security-whitepaper.pdf`;
+  const MINIMAL_PDF = Buffer.from(
+    '%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n' +
+      '2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n' +
+      '3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]/Contents 4 0 R>>endobj\n' +
+      '4 0 obj<</Length 62>>stream\nBT /F1 24 Tf 72 720 Td (Autochart Security Whitepaper) Tj ET\nendstream endobj\n' +
+      'trailer<</Root 1 0 R>>\n%%EOF\n',
+  );
+  const { S3Client, PutObjectCommand } = await import('@aws-sdk/client-s3');
+  const s3 = new S3Client({
+    region: process.env.APP_AWS_REGION || 'us-east-1',
+    endpoint: process.env.APP_AWS_ENDPOINT || 'http://127.0.0.1:9000',
+    forcePathStyle: true,
+    credentials: {
+      accessKeyId: process.env.APP_AWS_ACCESS_KEY_ID || 'compai',
+      secretAccessKey: process.env.APP_AWS_SECRET_ACCESS_KEY || 'compai12345',
+    },
+  });
+  await s3.send(
+    new PutObjectCommand({
+      Bucket: process.env.APP_AWS_ORG_ASSETS_BUCKET || 'compai-assets',
+      Key: s3Key,
+      Body: MINIMAL_PDF,
+      ContentType: 'application/pdf',
+    }),
+  );
+  const docName = 'Security Whitepaper.pdf';
+  const existingDoc = await db.trustDocument.findFirst({
+    where: { organizationId: org.id, name: docName },
+  });
+  if (!existingDoc) {
+    await db.trustDocument.create({
+      data: {
+        organizationId: org.id,
+        name: docName,
+        description: 'High-level security architecture overview',
+        s3Key,
+        category: 'general',
+        isActive: true,
+      },
+    });
+  }
+  console.log(`Trust document: ${docName} -> s3://compai-assets/${s3Key}`);
+
   console.log('\nDone. Trust center data seeded for /autochart');
 }
 

@@ -8,6 +8,8 @@ import {
   downloadComplianceResource,
   downloadTrustDocument,
   downloadAllDocuments,
+  resolveDownloadUrl,
+  type DownloadResponse,
 } from '@/lib/api';
 
 type Tab = 'overview' | 'policies' | 'certificates' | 'documents';
@@ -28,11 +30,10 @@ export function AccessPortalClient({
   const [tab, setTab] = useState<Tab>('overview');
   const [busy, setBusy] = useState<string | null>(null);
 
-  async function dl(id: string, fn: () => Promise<{ url: string }>) {
+  async function dl(id: string, fn: () => Promise<DownloadResponse>) {
     setBusy(id);
     try {
-      const { url } = await fn();
-      window.open(url, '_blank');
+      window.open(resolveDownloadUrl(await fn()), '_blank');
     } catch {
       alert('Download failed. Please try again.');
     } finally {
@@ -104,7 +105,7 @@ export function AccessPortalClient({
             )}
           >
             {policies.map((p) => (
-              <Row key={p.id} title={p.title || p.name || 'Policy'} subtitle={p.description || undefined} />
+              <Row key={p.id} title={p.name} subtitle={p.description || undefined} />
             ))}
           </Section>
         )}
@@ -148,7 +149,7 @@ export function AccessPortalClient({
               >
                 <div>
                   <div className="font-medium text-slate-900">{d.name}</div>
-                  {d.category && <span className="mt-1 inline-block rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-600">{d.category.replace(/_/g, ' ')}</span>}
+                  {d.description && <span className="mt-1 block text-xs text-slate-500">{d.description}</span>}
                 </div>
               </button>
             ))}

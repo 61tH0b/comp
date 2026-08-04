@@ -72,23 +72,29 @@ export interface GrantData {
   ndaPdfUrl: string | null;
 }
 
+// Gated listing shapes — the API returns BARE ARRAYS for all three
+// (verified against trust-access.service.ts).
 export interface Policy {
   id: string;
-  title?: string;
-  name?: string;
-  description?: string | null;
+  name: string;
+  description: string | null;
+  lastPublishedAt?: string | null;
+  updatedAt?: string;
 }
 
 export interface ComplianceResource {
   framework: string;
-  fileName?: string;
+  fileName: string;
+  fileSize?: number;
+  updatedAt?: string;
 }
 
 export interface TrustDocument {
   id: string;
   name: string;
-  category?: string | null;
-  description?: string | null;
+  description: string | null;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 async function api<T>(path: string, options?: RequestInit): Promise<T> {
@@ -137,20 +143,36 @@ export const signNda = (token: string, name: string, email: string) =>
   });
 
 // --- Gated content ---
+// Download endpoints return heterogeneous keys: `downloadUrl` for the
+// aggregate downloads, `signedUrl` for per-item downloads (verified against
+// trust-access.service.ts). normalize with resolveDownloadUrl().
+export interface DownloadResponse {
+  downloadUrl?: string;
+  signedUrl?: string;
+  name?: string;
+  fileName?: string;
+}
+
+export function resolveDownloadUrl(res: DownloadResponse): string {
+  const url = res.downloadUrl || res.signedUrl;
+  if (!url) throw new Error('No download URL in response');
+  return url;
+}
+
 export const getGrantData = (token: string) => api<GrantData>(`access/${token}`);
 export const getPolicies = (token: string) =>
-  api<{ policies: Policy[] }>(`access/${token}/policies`);
+  api<Policy[]>(`access/${token}/policies`);
 export const downloadAllPolicies = (token: string) =>
-  api<{ url: string }>(`access/${token}/policies/download-all`);
+  api<DownloadResponse>(`access/${token}/policies/download-all`);
 export const downloadAllPoliciesZip = (token: string) =>
-  api<{ url: string }>(`access/${token}/policies/download-all-zip`);
+  api<DownloadResponse>(`access/${token}/policies/download-all-zip`);
 export const getComplianceResources = (token: string) =>
-  api<{ resources: ComplianceResource[] }>(`access/${token}/compliance-resources`);
+  api<ComplianceResource[]>(`access/${token}/compliance-resources`);
 export const downloadComplianceResource = (token: string, framework: string) =>
-  api<{ url: string }>(`access/${token}/compliance-resources/${framework}`);
+  api<DownloadResponse>(`access/${token}/compliance-resources/${framework}`);
 export const getTrustDocuments = (token: string) =>
-  api<{ documents: TrustDocument[] }>(`access/${token}/documents`);
+  api<TrustDocument[]>(`access/${token}/documents`);
 export const downloadTrustDocument = (token: string, documentId: string) =>
-  api<{ url: string }>(`access/${token}/documents/${documentId}`);
+  api<DownloadResponse>(`access/${token}/documents/${documentId}`);
 export const downloadAllDocuments = (token: string) =>
-  api<{ url: string }>(`access/${token}/documents/download-all`);
+  api<DownloadResponse>(`access/${token}/documents/download-all`);

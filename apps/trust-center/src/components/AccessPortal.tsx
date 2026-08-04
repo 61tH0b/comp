@@ -8,17 +8,17 @@ export async function AccessPortal({ token }: { token: string }) {
   try {
     const [grant, policies, resources, documents] = await Promise.all([
       getGrantData(token),
-      getPolicies(token).catch(() => ({ policies: [] })),
-      getComplianceResources(token).catch(() => ({ resources: [] })),
-      getTrustDocuments(token).catch(() => ({ documents: [] })),
+      getPolicies(token).catch(() => []),
+      getComplianceResources(token).catch(() => []),
+      getTrustDocuments(token).catch(() => []),
     ]);
     return (
       <AccessPortalClient
         token={token}
         grant={grant}
-        policies={policies?.policies || []}
-        resources={resources?.resources || []}
-        documents={documents?.documents || []}
+        policies={policies}
+        resources={resources}
+        documents={documents}
       />
     );
   } catch (err) {

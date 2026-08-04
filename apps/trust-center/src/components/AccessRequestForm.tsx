@@ -5,7 +5,7 @@ import { submitAccessRequest, reclaimAccess } from '@/lib/api';
 
 export function AccessRequestForm() {
   const [isOpen, setIsOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState<null | 'under_review' | 'already_approved'>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -15,14 +15,14 @@ export function AccessRequestForm() {
     setError(null);
     const data = new FormData(e.currentTarget);
     try {
-      await submitAccessRequest({
+      const res = await submitAccessRequest({
         name: data.get('name') as string,
         email: data.get('email') as string,
         company: data.get('company') as string,
         jobTitle: data.get('jobTitle') as string,
         purpose: data.get('purpose') as string,
       });
-      setSubmitted(true);
+      setSubmitted(res.status === 'already_approved' ? 'already_approved' : 'under_review');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to submit request');
     } finally {
@@ -33,9 +33,13 @@ export function AccessRequestForm() {
   if (submitted) {
     return (
       <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6">
-        <h3 className="font-semibold text-emerald-900">Request Submitted</h3>
+        <h3 className="font-semibold text-emerald-900">
+          {submitted === 'already_approved' ? 'You Already Have Access' : 'Request Submitted'}
+        </h3>
         <p className="mt-1 text-sm text-emerald-700">
-          Your access request has been received. You&apos;ll receive an email with next steps once it&apos;s reviewed.
+          {submitted === 'already_approved'
+            ? 'An active access grant already exists for this email. Use the "Reclaim" form below to get a fresh access link.'
+            : "Your access request has been received. You'll receive an email with next steps once it's reviewed."}
         </p>
       </div>
     );
